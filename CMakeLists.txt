@@ -3,4 +3,8 @@ project(OSNTHR)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(OSNTHR main.cpp)
+add_executable(OSNTHR
+        main.cpp
+        Graph.cpp
+        Graph.h
+        )
