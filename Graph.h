@@ -23,6 +23,7 @@ class Graph {
     ~Graph();
 
     void addEdge(int nodeID, int neighborID, int cost);
+    Edge* getEdge(int nodeID);
 
 };
 
