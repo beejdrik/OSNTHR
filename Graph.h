@@ -16,14 +16,14 @@ class Graph {
       Edge* head;
     };
     static constexpr int MAX_NODES = 30;  //IDE suggested constexpr; ensures array size is set at compile time
-    Node adjList[MAX_NODES]{};              //Creates adjacency list array
+    Node adjList[MAX_NODES]{};              //Creates adjacency list array for 5x6 graph
     public:
 
     Graph();
     ~Graph();
 
     void addEdge(int nodeID, int neighborID, int cost);
-    Edge* getEdge(int nodeID);
+    Edge* getEdgeHead(int nodeID);
 
 };
 

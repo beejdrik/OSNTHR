@@ -28,3 +28,8 @@ void Graph::addEdge(int nodeID, int neighborID, int cost) {
     newEdge->next = adjList[nodeID].head;   //next is set to head (nullptr at first)
     adjList[nodeID].head = newEdge;         //head is set to newEdge
 }
+
+Graph::Edge* Graph::getEdgeHead(int nodeID) {
+    return adjList[nodeID].head;
+}
+
