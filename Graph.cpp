@@ -4,6 +4,9 @@
 
 #include "Graph.h"
 
+#include <iostream>
+#include <ostream>
+
 Graph::Graph() {
     for (int i=0; i < MAX_NODES; i++) {
         adjList[i].head = nullptr;      //Sets all heads of the nodes in the adjList
@@ -21,6 +24,10 @@ Graph::~Graph() {
     }
 }
 
+Graph::Edge* Graph::getEdgeHead(int nodeID) {
+    return adjList[nodeID].head;
+}
+
 void Graph::addEdge(int nodeID, int neighborID, int cost) {
     Edge* newEdge = new Edge();
     newEdge->neighborID = neighborID;       //newEdge is passed neighborID, cost
@@ -29,7 +36,13 @@ void Graph::addEdge(int nodeID, int neighborID, int cost) {
     adjList[nodeID].head = newEdge;         //head is set to newEdge
 }
 
-Graph::Edge* Graph::getEdgeHead(int nodeID) {
-    return adjList[nodeID].head;
-}
+void Graph::printMap() {
+    for (int i=0; i < ROWS; i++) {
+        for (int j=0; j < COLS; j++) {
+            std::cout << i * COLS + j << " -- ";
+        }
+        std::cout << std::endl;
+    }
+    }
+
 

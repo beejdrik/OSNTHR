@@ -15,15 +15,20 @@ class Graph {
     struct Node{
       Edge* head;
     };
-    static constexpr int MAX_NODES = 30;  //IDE suggested constexpr; ensures array size is set at compile time
-    Node adjList[MAX_NODES]{};              //Creates adjacency list array for 5x6 graph
+
+    static constexpr int ROWS = 6;        //IDE suggested constexpr; ensures array size is set at compile time
+    static constexpr int COLS = 6;
+    static constexpr int MAX_NODES = 36;  // rows and columns: 6 x 6 = 36 nodes
+    Node adjList[MAX_NODES]{};              //Creates adjacency list array
     public:
 
     Graph();
     ~Graph();
 
-    void addEdge(int nodeID, int neighborID, int cost);
     Edge* getEdgeHead(int nodeID);
+    void printMap();
+
+    void addEdge(int nodeID, int neighborID, int cost);
 
 };
 
