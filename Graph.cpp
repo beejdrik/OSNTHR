@@ -28,6 +28,11 @@ Graph::Edge* Graph::getEdgeHead(int nodeID) {
     return adjList[nodeID].head;
 }
 
+int Graph::getMAX_NODES() {
+    return MAX_NODES;
+}
+
+
 void Graph::addEdge(int nodeID, int neighborID, int cost) {
     Edge* newEdge = new Edge();
     newEdge->neighborID = neighborID;       //newEdge is passed neighborID, cost

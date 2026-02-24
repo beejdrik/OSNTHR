@@ -26,6 +26,7 @@ class Graph {
     ~Graph();
 
     Edge* getEdgeHead(int nodeID);
+    int getMAX_NODES();
     void printMap();
 
     void addEdge(int nodeID, int neighborID, int cost);
