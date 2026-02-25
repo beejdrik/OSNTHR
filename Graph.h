@@ -7,7 +7,7 @@
 
 class Graph {
 
-struct Edge {
+class Edge {
     int neighborID;
     int cost;
     Edge* next;
@@ -33,15 +33,15 @@ public:
     Graph();
     ~Graph();
 
-    Edge* getEdgeHead(int nodeID) const;
+    Edge* getHead(int nodeID) const;
     static int getMaxNodes();
 
     static void printMap();
     void addEdge(int nodeID, int neighborID, int cost);
     // TODO: Add a function to loadMap from a .txt file
 
-    //Test Functions
-    void printEdges(int nodeID);
-    int traverseEdges(int nodeID);
+    //Testing Functions
+    void printEdges(int nodeID) const;
+    int traverseEdges(int nodeID) const;
 };
 
