@@ -62,9 +62,11 @@ int Graph::getMaxNodes() {
 
 //Graph member methods
 void Graph::addEdge(int nodeID, int neighborID, int cost) {
-    Edge* newEdge = new Edge(neighborID, cost);
-    newEdge->setNext(adjList[nodeID].head);     // Links newEdge into the list by setting next to existing head
-    adjList[nodeID].head = newEdge;             //newEdge is the new head of the list
+    if (nodeID != neighborID && nodeID < maxNodes && nodeID >= 0 && cost >= 0 && neighborID < maxNodes) {
+        Edge* newEdge = new Edge(neighborID, cost);
+        newEdge->setNext(adjList[nodeID].head);     // Links newEdge into the list by setting next to existing head
+        adjList[nodeID].head = newEdge;             //newEdge is the new head of the list
+    } else {std::cout << "Error in addEdge";}
 }
 
 void Graph::printMap() {
@@ -75,5 +77,28 @@ void Graph::printMap() {
         std::cout << std::endl;
     }
     }
+
+
+
+
+
+//TEST FUNCTIONS
+void Graph::printEdges(int nodeID) {
+    Edge* current = getEdgeHead(nodeID);
+    while (current != nullptr) {
+        std::cout << "neighborID= " << current->neighborID << " cost= " << current->cost << "  ";
+        current = current->next;
+    } std::cout << "0" << std::endl;
+}
+
+int Graph::traverseEdges(int nodeID) {
+    int counter = 0;
+    Edge* current = getEdgeHead(nodeID);
+    while (current != nullptr) {
+        counter++;
+        current = current->next;
+    }
+    return counter;
+}
 
 

@@ -6,11 +6,16 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
 
     Graph g;
-    g.addEdge(0, 1, 5);
-    if (g.getEdgeHead(0) != nullptr) {
-        cout << "Pass" << endl;
-    }
 
+    //g.printMap();
+
+    /*
+    g.addEdge(7, 1, 2);
+    g.addEdge(7, 6, 3);
+    g.addEdge(7, 8, 1);
+    g.addEdge(7, 3, 4);
+    g.printEdges(0);
+    */
 
     return 0;
 }
