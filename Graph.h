@@ -24,11 +24,11 @@ public:
       Edge* head;
     };
 
+    public:
     static constexpr int rows = 6;        //IDE suggested constexpr; ensures array size is set at compile time
     static constexpr int cols = 6;
     static constexpr int maxNodes = 36;  // rows and columns: 6 x 6 = 36 nodes
     Node adjList[maxNodes]{};              //Creates adjacency list array
-    public:
 
     Graph();
     ~Graph();
