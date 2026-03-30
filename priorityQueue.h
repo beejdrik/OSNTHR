@@ -13,7 +13,7 @@ using namespace std;
 class priorityQueue {
 private:
     pair<int, int> heapArr[Graph::maxNodes * 4];   //Maximum possible entries on the heap
-    int MAX_SIZE = Graph::maxNodes * 4;
+    int maxHeapSize = Graph::maxNodes * 4;
     int heapSize = 0;
 
 
@@ -27,9 +27,9 @@ public:
     ~priorityQueue();
 
     std::expected<void, std::string> push(const pair<int,int> &newEntry);
-    std::expected<pair<int,int>, std::string> priorityQueue::pop();
-    pair<int,int> peek();
-    bool isEmpty();
+    std::expected<pair<int,int>, std::string> pop();
+    std::expected<pair<int,int>, std::string> peek();
+    bool isEmpty() const;
 };
 
 

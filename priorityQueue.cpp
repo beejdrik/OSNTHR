@@ -11,7 +11,7 @@ void priorityQueue::bubbleDown(int index) {
     bool hasRight = right < heapSize;
     bool hasLeft = left < heapSize;
 
-    //while statement checks to make sure there is a least one child node of lesser distance than index
+    //while statement checks to make sure there is at least one child node of lesser distance than index
     //There is surely a better way to do this.
     while (hasLeft && (heapArr[index].first > heapArr[left].first ||
         (hasRight && heapArr[index].first > heapArr[right].first))) {
@@ -52,11 +52,31 @@ void priorityQueue::bubbleUp(int index) {
 // newEntry is added to the heap array at index heapCount, which is then incremented.
 //Then bubbleUp is called on that entry.
 std::expected<void, std::string> priorityQueue::push(const pair<int,int> &newEntry) {
-    if (heapSize == MAX_SIZE) {return std::unexpected("Heap is full");}
+    if (heapSize == maxHeapSize) {return std::unexpected("Heap is full");}
     heapArr[heapSize++] = newEntry;
     bubbleUp(heapSize - 1);
 }
 
+
+//pops root entry, returns it, calls bubbleDown to reorder the heap.
 std::expected<pair<int,int>, std::string> priorityQueue::pop() {
-    if (heapSize == 0) {return std::unexpected("Empty heap");}
+    if (isEmpty()) {return std::unexpected("Empty heap");}
+
+    pair<int,int> root = heapArr[0];
+    heapArr[0] = heapArr[heapSize--];
+    bubbleDown(0);
+    return root;
 }
+
+std::expected<pair<int,int>, std::string> priorityQueue::peek() {
+    if (isEmpty()) {return std::unexpected("Empty heap");}
+    return heapArr[0];
+}
+
+bool priorityQueue::isEmpty() const {
+    if (heapSize == 0) {
+        return true;
+    }
+    return false;
+}
+
