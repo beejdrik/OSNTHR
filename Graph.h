@@ -4,28 +4,34 @@
 #pragma once
 
 
-
+//Graph is an implementation of an adjacency list. It consists of an array (adjList[]), where each element is a
+//node (made using a struct). Each node points to a linked list consisting of Edge objects.
+//An edge is the connection between two points in a graph called vertices.
 class Graph {
 
+// Each edge has the ID of the neighbor that it connects to the source vertex, the cost of traversal,
+// and a pointer to the next edge connecting to the source vertex
 class Edge {
     int neighborID;
     int cost;
     Edge* next;
 public:
-    Edge(int id, int c);
+    //Edge constructor, getters/setters
+    Edge(int nID, int c);
     int getNeighborID() const;
     int getCost() const;
     Edge* getNext() const;
     void setNext(Edge* n);
 
 };
-
+    //The structure being stored in the array, used to create linked lists using each address
     struct Node{
       Edge* head;
     };
 
+    //This sets the size of the current graph, it'll change as time progresses.
     public:
-    static constexpr int rows = 6;        //IDE suggested constexpr; ensures array size is set at compile time
+    static constexpr int rows = 6;
     static constexpr int cols = 6;
     static constexpr int maxNodes = (rows * cols);  // rows and columns: 6 x 6 = 36 nodes
     Node adjList[maxNodes]{};              //Creates adjacency list array
@@ -39,6 +45,7 @@ public:
     static void printMap();
     void addEdge(int nodeID, int neighborID, int cost);
     // TODO: Add a function to loadMap from a .txt file
+    // This will simplify things greatly, later on
 
     //Testing Functions
     void printEdges(int nodeID) const;

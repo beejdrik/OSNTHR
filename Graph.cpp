@@ -1,9 +1,5 @@
-//
-// Created by Owner on 2/17/2026.
-//
 
 #include "Graph.h"
-
 #include <iostream>
 #include <ostream>
 
@@ -32,19 +28,17 @@ Graph::Edge::Edge(int nID, int c) {  //An edge requires a neighborID, cost to be
     next = nullptr;
 }
 
-//getters & setters
+
+//Edge getters & setters -- Used to build Edges using Graph::addEdge
 int Graph::Edge::getNeighborID() const {
     return neighborID;
 }
-
 int Graph::Edge::getCost() const {
     return cost;
 }
-
 Graph::Edge* Graph::Edge::getNext() const {
     return next;
 }
-
 void Graph::Edge::setNext(Edge *n) {
     next = n;
 }
@@ -69,10 +63,11 @@ void Graph::addEdge(int nodeID, int neighborID, int cost) {
     } else {std::cout << "Error in addEdge";}
 }
 
+//Iterates through rows and cols to print a visible conception of the graph
 void Graph::printMap() {
     for (int i=0; i < rows; i++) {
         for (int j=0; j < cols; j++) {
-            std::cout << i * cols + j << " -- ";
+            std::cout << i * cols + j << " -- "; //The formula I found for this purpose
         }
         std::cout << std::endl;
     }
