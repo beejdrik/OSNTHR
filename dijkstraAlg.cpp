@@ -1,4 +1,7 @@
 #include "dijkstraAlg.h"
+
+#include <algorithm>
+#include <iostream>
 #include <limits>
 
 
@@ -51,8 +54,24 @@ void dijkstraAlg::run(int source, int destination) {
             current = current->getNext();
         }
     }
+}
 
+//previousNode[] contains the most efficient route to all nodes in the graph. By checking previousNode[destination],
+//the function finds the node used to reach the final destination node with the least total distance. The function
+//saves a copy and adds it to pathArr, then calls itself recursively to find the next node up the chain, and so on.
+void dijkstraAlg::getShortestPath(int pathArr[], int &pathLength, int destination) {
+    if(destination > 0 && destination < Graph::maxNodes && previousNode[destination] != -1) {
+        int copy = previousNode[destination];
+        pathArr[pathLength++] = copy;
+        getShortestPath(pathArr, pathLength, previousNode[destination]);
+    }
+}
 
-
+//Because the route is saved destination -> source, this function needs to reverse it before printing it to the user.
+void dijkstraAlg::reverseAndPrint(int pathArr[], int &pathLength) {
+    std::reverse(pathArr, pathArr + pathLength);
+    for (int i = 0; i < pathLength; i++) {
+        cout << pathArr[i] << " ";
+    }
 }
 
