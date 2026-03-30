@@ -1,5 +1,5 @@
 #include "dijkstraAlg.h"
-
+#include "priorityQueue.h"
 #include <algorithm>
 #include <iostream>
 #include <limits>
@@ -8,9 +8,6 @@
 dijkstraAlg::dijkstraAlg(Graph &graph): graph(graph) {}
 
 void dijkstraAlg::run(int source, int destination) {
-    int currentVertex = source;
-
-
     //Initializes needed arrays with essentially null values in their contexts.
     for (int i= 0; i < Graph::maxNodes; i++) {
         visited[i] = false;
@@ -28,7 +25,7 @@ void dijkstraAlg::run(int source, int destination) {
 
     //While the pq is not empty, pop the root and save its vertex as currentVertex
     while (!priorityQueue.isEmpty()) {
-       currentVertex = priorityQueue.pop()->second;
+       int currentVertex = priorityQueue.pop()->second;
 
         if (currentVertex == destination) {     //Done!
             return;

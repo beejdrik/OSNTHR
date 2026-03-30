@@ -1,5 +1,5 @@
-
 #include "Graph.h"
+#include <iomanip>
 #include <iostream>
 #include <ostream>
 
@@ -67,7 +67,7 @@ void Graph::addEdge(int nodeID, int neighborID, int cost) {
 void Graph::printMap() {
     for (int i=0; i < rows; i++) {
         for (int j=0; j < cols; j++) {
-            std::cout << i * cols + j << " -- "; //The formula I found for this purpose
+            std::cout << std::setw(2) << i * cols + j << " -- "; //The formula I found for this purpose
         }
         std::cout << std::endl;
     }
