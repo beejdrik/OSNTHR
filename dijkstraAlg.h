@@ -7,9 +7,10 @@ class dijkstraAlg {
   public:
   explicit dijkstraAlg(Graph &graph);
     void getShortestPath(int pathArr[], int &pathLength, int destination);
+  void run(int source, int destination);
 
   static void reverseAndPrint(int pathArr[], int &pathLength);
-    void run(int source, int destination);
+    void executeAlgorithm(int source, int destination);
 
   private:
     Graph &graph;

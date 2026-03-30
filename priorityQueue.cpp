@@ -55,6 +55,7 @@ std::expected<void, std::string> priorityQueue::push(const pair<int,int> &newEnt
     if (heapSize == maxHeapSize) {return std::unexpected("Heap is full");}
     heapArr[heapSize++] = newEntry;
     bubbleUp(heapSize - 1);
+    return {};
 }
 
 

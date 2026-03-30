@@ -7,7 +7,7 @@
 
 dijkstraAlg::dijkstraAlg(Graph &graph): graph(graph) {}
 
-void dijkstraAlg::run(int source, int destination) {
+void dijkstraAlg::executeAlgorithm(int source, int destination) {
     //Initializes needed arrays with essentially null values in their contexts.
     for (int i= 0; i < Graph::maxNodes; i++) {
         visited[i] = false;
@@ -70,5 +70,16 @@ void dijkstraAlg::reverseAndPrint(int pathArr[], int &pathLength) {
     for (int i = 0; i < pathLength; i++) {
         cout << pathArr[i] << " ";
     }
+}
+
+
+
+void dijkstraAlg::run(int source, int destination) {
+    int pathArr[Graph::maxNodes];
+    int pathLength = 0;
+
+    executeAlgorithm(source, destination);
+    getShortestPath(pathArr, pathLength, destination);
+    reverseAndPrint(pathArr, pathLength);
 }
 

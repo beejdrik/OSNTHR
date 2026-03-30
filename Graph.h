@@ -34,9 +34,9 @@ public:
     };
 
     //This sets the size of the current graph, it'll change as time progresses.
-    static constexpr int rows = 5;
-    static constexpr int cols = 5;
-    static constexpr int maxNodes = (rows * cols);  // rows and columns: 5 x 5 = 25 nodes
+    static constexpr int rows = 4;
+    static constexpr int cols = 4;
+    static constexpr int maxNodes = (rows * cols);  // rows and columns: 4 x 4 = 16 nodes
     Node adjList[maxNodes]{};              //Creates adjacency list array
 
     Graph();
