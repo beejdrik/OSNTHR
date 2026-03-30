@@ -72,8 +72,16 @@ void dijkstraAlg::reverseAndPrint(int pathArr[], int &pathLength) {
     }
 }
 
-
-
+/*
+ void dijkstraAlg::printDistances(int source, int destination, int distanceFromSource[], int pathArr[]){
+    for(int i = 0; i < (distanceFromSource[destination]); i++){
+        if(distanceFromSource[destination] != std::numeric_limits<int>::max()){
+            cout << "Shortest distance from " << source << " to " << pathArr[i] << " is: " <<
+                distanceFromSource[i] << endl;
+        }
+    }
+}
+*/
 void dijkstraAlg::run(int source, int destination) {
     int pathArr[Graph::maxNodes];
     int pathLength = 0;
@@ -81,5 +89,9 @@ void dijkstraAlg::run(int source, int destination) {
     executeAlgorithm(source, destination);
     getShortestPath(pathArr, pathLength, destination);
     reverseAndPrint(pathArr, pathLength);
+
+    std::cout << destination;
+    std::cout << "\n\n";
+
 }
 

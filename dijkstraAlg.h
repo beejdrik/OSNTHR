@@ -8,6 +8,8 @@ class dijkstraAlg {
   explicit dijkstraAlg(Graph &graph);
     void getShortestPath(int pathArr[], int &pathLength, int destination);
   void run(int source, int destination);
+  //void printDistances(int source, int destination, int distanceFromSource[], int pathArr[]);
+  // TODO ^
 
   static void reverseAndPrint(int pathArr[], int &pathLength);
     void executeAlgorithm(int source, int destination);

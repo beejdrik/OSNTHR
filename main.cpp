@@ -49,7 +49,7 @@ int main() {
 
 
     dijkstraAlg dijkstra(g);
-    dijkstra.run(0, 15);
+    dijkstra.run(0, 3);
 
 
 
