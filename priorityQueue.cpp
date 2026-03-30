@@ -63,7 +63,8 @@ std::expected<pair<int,int>, std::string> priorityQueue::pop() {
     if (isEmpty()) {return std::unexpected("Empty heap");}
 
     pair<int,int> root = heapArr[0];
-    heapArr[0] = heapArr[heapSize--];
+    heapSize--;
+    heapArr[0] = heapArr[heapSize];
     bubbleDown(0);
     return root;
 }

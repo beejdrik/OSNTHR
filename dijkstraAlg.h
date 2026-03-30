@@ -1,12 +1,12 @@
 #pragma once
 #include "Graph.h"
+#include "priorityQueue.h"
 
 
 class dijkstraAlg {
   public:
     dijkstraAlg(Graph &graph);
-    ~dijkstraAlg();
-    void getShortestPath(int pathArr[], int &pathLength);
+    void getShortestPath(int pathArr[], int &pathLength, int destination);
     void run(int source, int destination);
 
   private:

@@ -11,7 +11,10 @@ class Graph {
 
 // Each edge has the ID of the neighbor that it connects to the source vertex, the cost of traversal,
 // and a pointer to the next edge connecting to the source vertex
+//----------------------------------------------------------------------------------------------------------------------
+public:
 class Edge {
+
     int neighborID;
     int cost;
     Edge* next;
@@ -24,13 +27,13 @@ public:
     void setNext(Edge* n);
 
 };
+//----------------------------------------------------------------------------------------------------------------------
     //The structure being stored in the array, used to create linked lists using each address
     struct Node{
-      Edge* head;
+        Edge* head;
     };
 
     //This sets the size of the current graph, it'll change as time progresses.
-    public:
     static constexpr int rows = 6;
     static constexpr int cols = 6;
     static constexpr int maxNodes = (rows * cols);  // rows and columns: 6 x 6 = 36 nodes
