@@ -56,12 +56,3 @@ void dijkstraAlg::run(int source, int destination) {
 
 }
 
-
-/*for (int i = 0; i < graph.adjList[currentVertex].head->getNeighborID(); i++) {
-    distanceFromSource[currentVertex] += graph.adjList[currentVertex].head->getCost();
-    if (distanceFromSource[currentVertex] < distanceFromSource[i]) {
-        distanceFromSource[i] = distanceFromSource[currentVertex];
-        previousNode[i] = currentVertex;
-        priorityQueue.push({distanceFromSource[i], currentVertex});
-    }
-}
