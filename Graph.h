@@ -45,7 +45,7 @@ public:
     static void printMap();
     void addEdge(int nodeID, int neighborID, int cost);
     // TODO: Add a function to loadMap from a .txt file
-    // This will simplify things greatly, later on
+    // This will simplify things greatly later on
 
     //Testing Functions
     void printEdges(int nodeID) const;
