@@ -27,7 +27,7 @@ void dijkstraAlg::executeAlgorithm(int source, int destination) {
     while (!priorityQueue.isEmpty()) {
        int currentVertex = priorityQueue.pop()->second;
 
-        if (currentVertex == destination) {     //Done!
+        if (currentVertex == destination) {     //Found the best route to the final destination, we can stop looking now
             return;
         }
 
@@ -35,8 +35,8 @@ void dijkstraAlg::executeAlgorithm(int source, int destination) {
 
 
 
-        //While the vertex has more neighbors, save neighborID. Then save the current distance from source + distance to
-        //its neighbor (cost) as newDistance. If it's shorter than the currently best known distance to that vertex,
+        //While the vertex has more neighbors, save neighborID. Then save the current distance-from-source + distance-to
+        //next-neighbor (cost) as newDistance. If it's shorter than the currently best known distance to that vertex,
         //overwrite the old one and save it to previousNode[] to remember the path. Then, push the neighbor's
         //distance and  vertex in a pair to the heap for further investigation.
         Graph::Edge* current = graph.adjList[currentVertex].head; // --> Allows currentVertex to use data such as

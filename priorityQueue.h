@@ -8,7 +8,7 @@ using namespace std;
 
 //priority queue implemented as a heap. The root is always the entry with the smallest total distance.
 //This is good for building dijkstra's algorithm. It needs to know the smallest distance up to the point at which it's
-//checking for the next edge to check.
+//checking for the next edge to investigate.
 
 class priorityQueue {
 private:

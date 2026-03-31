@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include "dijkstraAlg.h"
 #include "Graph.h"
 #include "priorityQueue.h"
@@ -8,14 +7,13 @@ using namespace std;
 int main() {
 
     Graph g;
-    Graph::printMap();
 
     //EXAMPLE ------------------------------------------------------------------------------
 
     // Row 0
     g.addEdge(0, 1, 1);   g.addEdge(1, 0, 1);
     g.addEdge(1, 2, 1);   g.addEdge(2, 1, 1);
-    g.addEdge(2, 3, 1);   g.addEdge(3, 2, 1);
+    g.addEdge(2, 3, 50);   g.addEdge(3, 2, 1);   //EDIT TO 50 *******
 
     // Row 1
     g.addEdge(4, 5, 1);   g.addEdge(5, 4, 1);
@@ -47,9 +45,9 @@ int main() {
     g.addEdge(11, 15, 1); g.addEdge(15, 11, 1);
 
 
-
+    Graph::printMap();
     dijkstraAlg dijkstra(g);
-    dijkstra.run(0, 3);
+    dijkstra.run(0, 56);
 
 
 
