@@ -4,9 +4,6 @@
 #include <iostream>
 #include <limits>
 
-
-dijkstraAlg::dijkstraAlg(Graph &graph): graph(graph) {}
-
 void dijkstraAlg::executeAlgorithm(int source, int destination) {
     //Initializes needed arrays with essentially null values in their contexts.
     for (int i= 0; i < Graph::maxNodes; i++) {
