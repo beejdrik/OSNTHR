@@ -73,27 +73,3 @@ void Graph::printMap() {
     }
     }
 
-
-
-
-
-//TEST FUNCTIONS
-void Graph::printEdges(int nodeID) const {
-    Edge* current = getHead(nodeID);
-    while (current != nullptr) {
-        std::cout << "neighborID= " << current->getNeighborID() << " cost= " << current->getCost() << "  ";
-        current = current->getNext();
-    }
-}
-
-int Graph::traverseEdges(int nodeID) const {
-    int counter = 0;
-    Edge* current = getHead(nodeID);
-    while (current != nullptr) {
-        counter++;
-        current = current->getNext();
-    }
-    return counter;
-}
-
-
