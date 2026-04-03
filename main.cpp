@@ -5,11 +5,11 @@
 using namespace std;
 
 int main() {
-
-    mapBuilder::buildMap();
+    Graph g;
+    mapBuilder::buildMap(g);
     Graph::printMap();
-    dijkstraAlg dijkstra(g); //hmm
-    dijkstra.run(0, 15);
+    dijkstraAlg dijkstra(g);
+    dijkstra.run(0, 10);
 
 
 

@@ -4,6 +4,6 @@
 
 class mapBuilder {
     public:
-    static Graph buildMap();
+      static void buildMap(Graph &g);
 };
 
