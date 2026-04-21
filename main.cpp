@@ -2,17 +2,29 @@
 #include "dijkstraAlg.h"
 #include "Graph.h"
 #include "mapBuilder.h"
-using namespace std;
+
+//Only if using windows
+#ifdef _WIN32
+#include "ansiWindowsConfiguration.h"
+#include <windows.h>
+#endif
 
 int main() {
+    //Windows Console Configuration
+#ifdef _WIN32
+    HANDLE stdoutHandle; DWORD dwMode;
+    ansiWindowsConfiguration::setUpConsole(stdoutHandle, dwMode);
+#endif
 
+    //Builds and prints the graph
     Graph g;
-    mapBuilder::buildMap(g); //Builds the graph
-    std::cout << "\033[31mThis text is Red!\033[0m" << std::endl;
+    mapBuilder::buildMap(g);
+
     //User inputs
     int treasureInput = 0, finalDest = 0;
-    Graph::printMap(treasureInput, finalDest);
+    mapBuilder::printMap(treasureInput, finalDest);
 
+    //Runs the algorithm to find the treasure, then the rendezvous point
     dijkstraAlg dijkstra(g);
     dijkstra.run(0, treasureInput);
     dijkstra.run(treasureInput, finalDest);

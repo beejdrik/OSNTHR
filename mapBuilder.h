@@ -5,5 +5,6 @@
 class mapBuilder {
     public:
       static void buildMap(Graph &g);
+    static void printMap(int &treasureInput, int &finalDest);
 };
 
