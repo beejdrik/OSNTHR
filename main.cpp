@@ -1,7 +1,6 @@
 #include <iostream>
 #include "dijkstraAlg.h"
 #include "Graph.h"
-#include "priorityQueue.h"
 using namespace std;
 
 int main() {
@@ -47,7 +46,7 @@ int main() {
 
     Graph::printMap();
     dijkstraAlg dijkstra(g);
-    dijkstra.run(0, 56);
+    dijkstra.run(0, 3);
 
 
 

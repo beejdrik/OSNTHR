@@ -1,9 +1,5 @@
-//
-// Created by Owner on 2/17/2026.
-//
+
 #pragma once
-
-
 //Graph is an implementation of an adjacency list. It consists of an array (adjList[]), where each element is a
 //node (made using a struct). Each node points to a linked list consisting of Edge objects.
 //An edge is the connection between two points in a graph called vertices.
@@ -34,8 +30,8 @@ public:
     };
 
     //This sets the size of the current graph, it'll change as time progresses.
-    static constexpr int rows = 10;
-    static constexpr int cols = 10;
+    static constexpr int rows = 4;
+    static constexpr int cols = 4;
     static constexpr int maxNodes = (rows * cols);  // rows and columns: 4 x 4 = 16 nodes
     Node adjList[maxNodes]{};              //Creates adjacency list array
 
@@ -47,11 +43,6 @@ public:
 
     static void printMap();
     void addEdge(int nodeID, int neighborID, int cost);
-    // TODO: Add a function to loadMap from a .txt file
-    // This will simplify things greatly later on
 
-    //Testing Functions
-    void printEdges(int nodeID) const;
-    int traverseEdges(int nodeID) const;
 };
 
