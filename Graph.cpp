@@ -64,12 +64,31 @@ void Graph::addEdge(int nodeID, int neighborID, int cost) {
 }
 
 //Iterates through rows and cols to print a visible conception of the graph
-void Graph::printMap() {
+void Graph::printMap(int &treasureInput, int &finalDest) {
     for (int i=0; i < rows; i++) {
         for (int j=0; j < cols; j++) {
             std::cout << std::setw(2) << i * cols + j << " -- "; //The formula I found for this purpose
         }
         std::cout << std::endl;
+    }
+
+    std::cout << "Gazing across the battlefield, you activate the top secret "
+    "Omni-surface Navigable Treasure Hunting Robot from point 0 on the map..."
+    "Where is the treasure hidden: \n";
+    std::cin >> treasureInput;
+    while (treasureInput <= 0) { //Avoids invalid inputs
+        std::cout << "Invalid Input -- X < 1";
+        std::cout << "\n Try again: ";
+        std::cin >> treasureInput;
+    }
+
+    std::cout << "Giving your trusty robot one last pat on the head and a 'Godspeed little guy'... "
+    "Where do you set the rendezvous point? \n";
+    std::cin >> finalDest;
+    while (finalDest < 0) { //Avoids invalid inputs
+        std::cout << "Invalid Input -- X < 0";
+        std::cout << "\n Try again: ";
+        std::cin >> finalDest;
     }
     }
 

@@ -41,7 +41,7 @@ public:
     Edge* getHead(int nodeID) const;
     static int getMaxNodes();
 
-    static void printMap();
+    static void printMap(int &treasureInput, int &finalDest);
     void addEdge(int nodeID, int neighborID, int cost);
 
 };
