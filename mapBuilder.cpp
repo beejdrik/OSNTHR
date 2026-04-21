@@ -5,46 +5,283 @@
 
 
 void mapBuilder::buildMap(Graph &g) {
+    // =====================
+    // ROW CONNECTIONS
+    // =====================
 
     // Row 0
     g.addEdge(0, 1, 1);   g.addEdge(1, 0, 1);
     g.addEdge(1, 2, 1);   g.addEdge(2, 1, 1);
     g.addEdge(2, 3, 1);   g.addEdge(3, 2, 1);
-
-    // Row 1
+    g.addEdge(3, 4, 1);   g.addEdge(4, 3, 1);
     g.addEdge(4, 5, 1);   g.addEdge(5, 4, 1);
     g.addEdge(5, 6, 1);   g.addEdge(6, 5, 1);
     g.addEdge(6, 7, 1);   g.addEdge(7, 6, 1);
-
-    // Row 2
+    g.addEdge(7, 8, 1);   g.addEdge(8, 7, 1);
     g.addEdge(8, 9, 1);   g.addEdge(9, 8, 1);
-    g.addEdge(9, 10, 1);  g.addEdge(10, 9, 1);
-    g.addEdge(10, 11, 1); g.addEdge(11, 10, 1);
 
-    // Row 3
+    // Row 1
+    g.addEdge(10, 11, 1); g.addEdge(11, 10, 1);
+    g.addEdge(11, 12, 1); g.addEdge(12, 11, 1);
     g.addEdge(12, 13, 1); g.addEdge(13, 12, 1);
     g.addEdge(13, 14, 1); g.addEdge(14, 13, 1);
     g.addEdge(14, 15, 1); g.addEdge(15, 14, 1);
+    g.addEdge(15, 16, 1); g.addEdge(16, 15, 1);
+    g.addEdge(16, 17, 1); g.addEdge(17, 16, 1);
+    g.addEdge(17, 18, 1); g.addEdge(18, 17, 1);
+    g.addEdge(18, 19, 1); g.addEdge(19, 18, 1);
 
-    // Col 0 (vertical)
-    g.addEdge(0, 4, 1);   g.addEdge(4, 0, 1);
-    g.addEdge(4, 8, 1);   g.addEdge(8, 4, 1);
-    g.addEdge(8, 12, 1);  g.addEdge(12, 8, 1);
+    // Row 2
+    g.addEdge(20, 21, 1); g.addEdge(21, 20, 1);
+    g.addEdge(21, 22, 1); g.addEdge(22, 21, 1);
+    g.addEdge(22, 23, 1); g.addEdge(23, 22, 1);
+    g.addEdge(23, 24, 1); g.addEdge(24, 23, 1);
+    g.addEdge(24, 25, 1); g.addEdge(25, 24, 1);
+    g.addEdge(25, 26, 1); g.addEdge(26, 25, 1);
+    g.addEdge(26, 27, 1); g.addEdge(27, 26, 1);
+    g.addEdge(27, 28, 1); g.addEdge(28, 27, 1);
+    g.addEdge(28, 29, 1); g.addEdge(29, 28, 1);
 
-    // Col 1
-    g.addEdge(1, 5, 1);   g.addEdge(5, 1, 1);
-    g.addEdge(5, 9, 1);   g.addEdge(9, 5, 1);
-    g.addEdge(9, 13, 1);  g.addEdge(13, 9, 1);
+    // Row 3
+    g.addEdge(30, 31, 1); g.addEdge(31, 30, 1);
+    g.addEdge(31, 32, 1); g.addEdge(32, 31, 1);
+    g.addEdge(32, 33, 1); g.addEdge(33, 32, 1);
+    g.addEdge(33, 34, 1); g.addEdge(34, 33, 1);
+    g.addEdge(34, 35, 1); g.addEdge(35, 34, 1);
+    g.addEdge(35, 36, 1); g.addEdge(36, 35, 1);
+    g.addEdge(36, 37, 1); g.addEdge(37, 36, 1);
+    g.addEdge(37, 38, 1); g.addEdge(38, 37, 1);
+    g.addEdge(38, 39, 1); g.addEdge(39, 38, 1);
 
-    // Col 2
-    g.addEdge(2, 6, 1);   g.addEdge(6, 2, 1);
-    g.addEdge(6, 10, 1);  g.addEdge(10, 6, 1);
-    g.addEdge(10, 14, 1); g.addEdge(14, 10, 1);
+    // Row 4
+    g.addEdge(40, 41, 1); g.addEdge(41, 40, 1);
+    g.addEdge(41, 42, 1); g.addEdge(42, 41, 1);
+    g.addEdge(42, 43, 1); g.addEdge(43, 42, 1);
+    g.addEdge(43, 44, 1); g.addEdge(44, 43, 1);
+    g.addEdge(44, 45, 1); g.addEdge(45, 44, 1);
+    g.addEdge(45, 46, 1); g.addEdge(46, 45, 1);
+    g.addEdge(46, 47, 1); g.addEdge(47, 46, 1);
+    g.addEdge(47, 48, 1); g.addEdge(48, 47, 1);
+    g.addEdge(48, 49, 1); g.addEdge(49, 48, 1);
 
-    // Col 3
-    g.addEdge(3, 7, 1);   g.addEdge(7, 3, 1);
-    g.addEdge(7, 11, 1);  g.addEdge(11, 7, 1);
-    g.addEdge(11, 15, 1); g.addEdge(15, 11, 1);
+    // Row 5
+    g.addEdge(50, 51, 1); g.addEdge(51, 50, 1);
+    g.addEdge(51, 52, 1); g.addEdge(52, 51, 1);
+    g.addEdge(52, 53, 1); g.addEdge(53, 52, 1);
+    g.addEdge(53, 54, 1); g.addEdge(54, 53, 1);
+    g.addEdge(54, 55, 1); g.addEdge(55, 54, 1);
+    g.addEdge(55, 56, 1); g.addEdge(56, 55, 1);
+    g.addEdge(56, 57, 1); g.addEdge(57, 56, 1);
+    g.addEdge(57, 58, 1); g.addEdge(58, 57, 1);
+    g.addEdge(58, 59, 1); g.addEdge(59, 58, 1);
+
+    // Row 6
+    g.addEdge(60, 61, 1); g.addEdge(61, 60, 1);
+    g.addEdge(61, 62, 1); g.addEdge(62, 61, 1);
+    g.addEdge(62, 63, 1); g.addEdge(63, 62, 1);
+    g.addEdge(63, 64, 1); g.addEdge(64, 63, 1);
+    g.addEdge(64, 65, 1); g.addEdge(65, 64, 1);
+    g.addEdge(65, 66, 1); g.addEdge(66, 65, 1);
+    g.addEdge(66, 67, 1); g.addEdge(67, 66, 1);
+    g.addEdge(67, 68, 1); g.addEdge(68, 67, 1);
+    g.addEdge(68, 69, 1); g.addEdge(69, 68, 1);
+
+    // Row 7
+    g.addEdge(70, 71, 1); g.addEdge(71, 70, 1);
+    g.addEdge(71, 72, 1); g.addEdge(72, 71, 1);
+    g.addEdge(72, 73, 1); g.addEdge(73, 72, 1);
+    g.addEdge(73, 74, 1); g.addEdge(74, 73, 1);
+    g.addEdge(74, 75, 1); g.addEdge(75, 74, 1);
+    g.addEdge(75, 76, 1); g.addEdge(76, 75, 1);
+    g.addEdge(76, 77, 1); g.addEdge(77, 76, 1);
+    g.addEdge(77, 78, 1); g.addEdge(78, 77, 1);
+    g.addEdge(78, 79, 1); g.addEdge(79, 78, 1);
+
+    // Row 8
+    g.addEdge(80, 81, 1); g.addEdge(81, 80, 1);
+    g.addEdge(81, 82, 1); g.addEdge(82, 81, 1);
+    g.addEdge(82, 83, 1); g.addEdge(83, 82, 1);
+    g.addEdge(83, 84, 1); g.addEdge(84, 83, 1);
+    g.addEdge(84, 85, 1); g.addEdge(85, 84, 1);
+    g.addEdge(85, 86, 1); g.addEdge(86, 85, 1);
+    g.addEdge(86, 87, 1); g.addEdge(87, 86, 1);
+    g.addEdge(87, 88, 1); g.addEdge(88, 87, 1);
+    g.addEdge(88, 89, 1); g.addEdge(89, 88, 1);
+
+    // Row 9
+    g.addEdge(90, 91, 1); g.addEdge(91, 90, 1);
+    g.addEdge(91, 92, 1); g.addEdge(92, 91, 1);
+    g.addEdge(92, 93, 1); g.addEdge(93, 92, 1);
+    g.addEdge(93, 94, 1); g.addEdge(94, 93, 1);
+    g.addEdge(94, 95, 1); g.addEdge(95, 94, 1);
+    g.addEdge(95, 96, 1); g.addEdge(96, 95, 1);
+    g.addEdge(96, 97, 1); g.addEdge(97, 96, 1);
+    g.addEdge(97, 98, 1); g.addEdge(98, 97, 1);
+    g.addEdge(98, 99, 1); g.addEdge(99, 98, 1);
+
+    // =====================
+    // COLUMN CONNECTIONS
+    // =====================
+
+    // Column 0
+g.addEdge(0, 10, 1);   g.addEdge(10, 0, 1);
+g.addEdge(10, 20, 1);  g.addEdge(20, 10, 1);
+g.addEdge(20, 30, 1);  g.addEdge(30, 20, 1);
+g.addEdge(30, 40, 1);  g.addEdge(40, 30, 1);
+g.addEdge(40, 50, 1);  g.addEdge(50, 40, 1);
+g.addEdge(50, 60, 1);  g.addEdge(60, 50, 1);
+g.addEdge(60, 70, 1);  g.addEdge(70, 60, 1);
+g.addEdge(70, 80, 1);  g.addEdge(80, 70, 1);
+g.addEdge(80, 90, 1);  g.addEdge(90, 80, 1);
+g.addEdge(90, 100, 1); g.addEdge(100, 90, 1);
+g.addEdge(100, 110, 1); g.addEdge(110, 100, 1);
+g.addEdge(110, 120, 1); g.addEdge(120, 110, 1);
+g.addEdge(120, 130, 1); g.addEdge(130, 120, 1);
+g.addEdge(130, 140, 1); g.addEdge(140, 130, 1);
+
+// Column 1
+g.addEdge(1, 11, 1); g.addEdge(11, 1, 1);
+g.addEdge(11, 21, 1); g.addEdge(21, 11, 1);
+g.addEdge(21, 31, 1); g.addEdge(31, 21, 1);
+g.addEdge(31, 41, 1); g.addEdge(41, 31, 1);
+g.addEdge(41, 51, 1); g.addEdge(51, 41, 1);
+g.addEdge(51, 61, 1); g.addEdge(61, 51, 1);
+g.addEdge(61, 71, 1); g.addEdge(71, 61, 1);
+g.addEdge(71, 81, 1); g.addEdge(81, 71, 1);
+g.addEdge(81, 91, 1); g.addEdge(91, 81, 1);
+g.addEdge(91, 101, 1); g.addEdge(101, 91, 1);
+g.addEdge(101, 111, 1); g.addEdge(111, 101, 1);
+g.addEdge(111, 121, 1); g.addEdge(121, 111, 1);
+g.addEdge(121, 131, 1); g.addEdge(131, 121, 1);
+g.addEdge(131, 141, 1); g.addEdge(141, 131, 1);
+
+    // Column 2
+g.addEdge(2, 12, 1);   g.addEdge(12, 2, 1);
+g.addEdge(12, 22, 1);  g.addEdge(22, 12, 1);
+g.addEdge(22, 32, 1);  g.addEdge(32, 22, 1);
+g.addEdge(32, 42, 1);  g.addEdge(42, 32, 1);
+g.addEdge(42, 52, 1);  g.addEdge(52, 42, 1);
+g.addEdge(52, 62, 1);  g.addEdge(62, 52, 1);
+g.addEdge(62, 72, 1);  g.addEdge(72, 62, 1);
+g.addEdge(72, 82, 1);  g.addEdge(82, 72, 1);
+g.addEdge(82, 92, 1);  g.addEdge(92, 82, 1);
+g.addEdge(92, 102, 1); g.addEdge(102, 92, 1);
+g.addEdge(102, 112, 1); g.addEdge(112, 102, 1);
+g.addEdge(112, 122, 1); g.addEdge(122, 112, 1);
+g.addEdge(122, 132, 1); g.addEdge(132, 122, 1);
+g.addEdge(132, 142, 1); g.addEdge(142, 132, 1);
+
+// Column 3
+g.addEdge(3, 13, 1);   g.addEdge(13, 3, 1);
+g.addEdge(13, 23, 1);  g.addEdge(23, 13, 1);
+g.addEdge(23, 33, 1);  g.addEdge(33, 23, 1);
+g.addEdge(33, 43, 1);  g.addEdge(43, 33, 1);
+g.addEdge(43, 53, 1);  g.addEdge(53, 43, 1);
+g.addEdge(53, 63, 1);  g.addEdge(63, 53, 1);
+g.addEdge(63, 73, 1);  g.addEdge(73, 63, 1);
+g.addEdge(73, 83, 1);  g.addEdge(83, 73, 1);
+g.addEdge(83, 93, 1);  g.addEdge(93, 83, 1);
+g.addEdge(93, 103, 1); g.addEdge(103, 93, 1);
+g.addEdge(103, 113, 1); g.addEdge(113, 103, 1);
+g.addEdge(113, 123, 1); g.addEdge(123, 113, 1);
+g.addEdge(123, 133, 1); g.addEdge(133, 123, 1);
+g.addEdge(133, 143, 1); g.addEdge(143, 133, 1);
+
+// Column 4
+g.addEdge(4, 14, 1);   g.addEdge(14, 4, 1);
+g.addEdge(14, 24, 1);  g.addEdge(24, 14, 1);
+g.addEdge(24, 34, 1);  g.addEdge(34, 24, 1);
+g.addEdge(34, 44, 1);  g.addEdge(44, 34, 1);
+g.addEdge(44, 54, 1);  g.addEdge(54, 44, 1);
+g.addEdge(54, 64, 1);  g.addEdge(64, 54, 1);
+g.addEdge(64, 74, 1);  g.addEdge(74, 64, 1);
+g.addEdge(74, 84, 1);  g.addEdge(84, 74, 1);
+g.addEdge(84, 94, 1);  g.addEdge(94, 84, 1);
+g.addEdge(94, 104, 1); g.addEdge(104, 94, 1);
+g.addEdge(104, 114, 1); g.addEdge(114, 104, 1);
+g.addEdge(114, 124, 1); g.addEdge(124, 114, 1);
+g.addEdge(124, 134, 1); g.addEdge(134, 124, 1);
+g.addEdge(134, 144, 1); g.addEdge(144, 134, 1);
+
+// Column 5
+g.addEdge(5, 15, 1);   g.addEdge(15, 5, 1);
+g.addEdge(15, 25, 1);  g.addEdge(25, 15, 1);
+g.addEdge(25, 35, 1);  g.addEdge(35, 25, 1);
+g.addEdge(35, 45, 1);  g.addEdge(45, 35, 1);
+g.addEdge(45, 55, 1);  g.addEdge(55, 45, 1);
+g.addEdge(55, 65, 1);  g.addEdge(65, 55, 1);
+g.addEdge(65, 75, 1);  g.addEdge(75, 65, 1);
+g.addEdge(75, 85, 1);  g.addEdge(85, 75, 1);
+g.addEdge(85, 95, 1);  g.addEdge(95, 85, 1);
+g.addEdge(95, 105, 1); g.addEdge(105, 95, 1);
+g.addEdge(105, 115, 1); g.addEdge(115, 105, 1);
+g.addEdge(115, 125, 1); g.addEdge(125, 115, 1);
+g.addEdge(125, 135, 1); g.addEdge(135, 125, 1);
+g.addEdge(135, 145, 1); g.addEdge(145, 135, 1);
+
+// Column 6
+g.addEdge(6, 16, 1);   g.addEdge(16, 6, 1);
+g.addEdge(16, 26, 1);  g.addEdge(26, 16, 1);
+g.addEdge(26, 36, 1);  g.addEdge(36, 26, 1);
+g.addEdge(36, 46, 1);  g.addEdge(46, 36, 1);
+g.addEdge(46, 56, 1);  g.addEdge(56, 46, 1);
+g.addEdge(56, 66, 1);  g.addEdge(66, 56, 1);
+g.addEdge(66, 76, 1);  g.addEdge(76, 66, 1);
+g.addEdge(76, 86, 1);  g.addEdge(86, 76, 1);
+g.addEdge(86, 96, 1);  g.addEdge(96, 86, 1);
+g.addEdge(96, 106, 1); g.addEdge(106, 96, 1);
+g.addEdge(106, 116, 1); g.addEdge(116, 106, 1);
+g.addEdge(116, 126, 1); g.addEdge(126, 116, 1);
+g.addEdge(126, 136, 1); g.addEdge(136, 126, 1);
+g.addEdge(136, 146, 1); g.addEdge(146, 136, 1);
+
+// Column 7
+g.addEdge(7, 17, 1);   g.addEdge(17, 7, 1);
+g.addEdge(17, 27, 1);  g.addEdge(27, 17, 1);
+g.addEdge(27, 37, 1);  g.addEdge(37, 27, 1);
+g.addEdge(37, 47, 1);  g.addEdge(47, 37, 1);
+g.addEdge(47, 57, 1);  g.addEdge(57, 47, 1);
+g.addEdge(57, 67, 1);  g.addEdge(67, 57, 1);
+g.addEdge(67, 77, 1);  g.addEdge(77, 67, 1);
+g.addEdge(77, 87, 1);  g.addEdge(87, 77, 1);
+g.addEdge(87, 97, 1);  g.addEdge(97, 87, 1);
+g.addEdge(97, 107, 1); g.addEdge(107, 97, 1);
+g.addEdge(107, 117, 1); g.addEdge(117, 107, 1);
+g.addEdge(117, 127, 1); g.addEdge(127, 117, 1);
+g.addEdge(127, 137, 1); g.addEdge(137, 127, 1);
+g.addEdge(137, 147, 1); g.addEdge(147, 137, 1);
+
+// Column 8
+g.addEdge(8, 18, 1);   g.addEdge(18, 8, 1);
+g.addEdge(18, 28, 1);  g.addEdge(28, 18, 1);
+g.addEdge(28, 38, 1);  g.addEdge(38, 28, 1);
+g.addEdge(38, 48, 1);  g.addEdge(48, 38, 1);
+g.addEdge(48, 58, 1);  g.addEdge(58, 48, 1);
+g.addEdge(58, 68, 1);  g.addEdge(68, 58, 1);
+g.addEdge(68, 78, 1);  g.addEdge(78, 68, 1);
+g.addEdge(78, 88, 1);  g.addEdge(88, 78, 1);
+g.addEdge(88, 98, 1);  g.addEdge(98, 88, 1);
+g.addEdge(98, 108, 1); g.addEdge(108, 98, 1);
+g.addEdge(108, 118, 1); g.addEdge(118, 108, 1);
+g.addEdge(118, 128, 1); g.addEdge(128, 118, 1);
+g.addEdge(128, 138, 1); g.addEdge(138, 128, 1);
+g.addEdge(138, 148, 1); g.addEdge(148, 138, 1);
+
+// Column 9
+g.addEdge(9, 19, 1);   g.addEdge(19, 9, 1);
+g.addEdge(19, 29, 1);  g.addEdge(29, 19, 1);
+g.addEdge(29, 39, 1);  g.addEdge(39, 29, 1);
+g.addEdge(39, 49, 1);  g.addEdge(49, 39, 1);
+g.addEdge(49, 59, 1);  g.addEdge(59, 49, 1);
+g.addEdge(59, 69, 1);  g.addEdge(69, 59, 1);
+g.addEdge(69, 79, 1);  g.addEdge(79, 69, 1);
+g.addEdge(79, 89, 1);  g.addEdge(89, 79, 1);
+g.addEdge(89, 99, 1);  g.addEdge(99, 89, 1);
+g.addEdge(99, 109, 1); g.addEdge(109, 99, 1);
+g.addEdge(109, 119, 1); g.addEdge(119, 109, 1);
+g.addEdge(119, 129, 1); g.addEdge(129, 119, 1);
+g.addEdge(129, 139, 1); g.addEdge(139, 129, 1);
+g.addEdge(139, 149, 1); g.addEdge(149, 139, 1);
 }
 
 
@@ -237,5 +474,3 @@ std::cout << "\n";
     }
     std::cout << std::endl;
     }
-
-
