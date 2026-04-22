@@ -566,7 +566,7 @@ void mapBuilder::finalOutputPrint(int finalDest) {
                  "There you see it.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
     std::cout << "\033[1;36;2;43m================================================="
                  "============================================\033[0m\n\n";
-    std::cout << "           \033[1;39mFinally... ST PETER'S COLLECTION OF FORBIDDEN GOLDEN FUNKO POPS\033[0m";
+    std::cout << "          \033[1;39mFinally... JULIUS CAESAR'S COLLECTION OF FORBIDDEN GOLDEN FUNKO POPS\033[0m";
     std::cout << "\n\n\033[1;36;2;43m================================================="
                  "============================================\033[0m\n\n";
 }
