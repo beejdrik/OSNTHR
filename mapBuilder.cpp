@@ -507,6 +507,22 @@ std::cout << "\033[33;2m" << std::setw(3) << 148 << "\033[0m" << " -- ";
 std::cout << "\033[32m" << std::setw(3) << 149 << "\033[0m" << " -- ";
 std::cout << "\n";
 
+    std::cout << "\n\nEXPLANATION OF THE MAP: \n"
+    "\033[32mPlain greens\033[0m = 1 cost \n";
+
+    std::cout << "\033[37;1mWhite Roads\033[0m = 0 cost \n";
+    std::cout << "\033[33;2mBrown Mudflats\033[0m = 3 cost \n";
+    std::cout << "\033[34mBlue Rivers\033[0m = 5 cost \n";
+    std::cout << "\033[1;32;47mGray Mountains on Green\033[0m = 3 cost " <<
+        "\033[1;33;47mGray Mountains on Yellow\033[0m = 5 cost " <<
+            "\033[1;31;47mGray Mountains on Red\033[0m = 15 cost \n";
+    std::cout << "\033[1;32;45mPurple Guard Posts\033[0m = 10 cost " <<
+        "\033[33;1mImmediate Vicinity of the Guards\033[0m = 5 cost \n";
+    std::cout << "\033[1;32;41mMine Fields\033[0m = 20 cost \n";
+    std::cout << "Speed Modifiers Stack; Some Tiles Cost 25 total\n\n";
+
+
+
     std::cout << "Gazing across the battlefield, you activate the top secret "
     "Omni-surface Navigable Treasure Hunting Robot from point 0 on the map..."
     "Where is the treasure hidden (only natural numbers): \n";
