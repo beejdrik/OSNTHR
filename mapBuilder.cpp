@@ -528,8 +528,8 @@ std::cout << "\n";
     "Where is the treasure hidden (only natural numbers): \n";
     std::cin >> treasureInput;
 
-    while (treasureInput <= 0) { //Avoids invalid inputs
-        std::cout << "Invalid Input -- X < 1";
+    while (treasureInput < 0 || treasureInput > 149) { //Avoids invalid inputs
+        std::cout << "Invalid Input ";
         std::cout << "\n Try again: ";
         std::cin >> treasureInput;
     }
@@ -538,10 +538,35 @@ std::cout << "\n";
     std::cout << "Giving your trusty robot one last pat on the head and a 'Godspeed little guy'... "
     "Where do you set the rendezvous point? \n";
     std::cin >> finalDest;
-    while (finalDest < 0) { //Avoids invalid inputs
-        std::cout << "Invalid Input -- X < 0";
+    while (finalDest < 1 || finalDest > 149) { //Avoids invalid inputs
+        std::cout << "Invalid Input ";
         std::cout << "\n Try again: ";
         std::cin >> finalDest;
     }
     std::cout << std::endl;
     }
+
+void mapBuilder::finalOutputPrint(int finalDest) {
+    std::string answer = "";
+    std::cout << "\nAre You Ready to Find Out if You've Secured Your Treasure? (y/n)";
+    std::cin >> answer;
+
+    while (answer != "y" && answer != "yes" && answer != "Yes" && answer != "Y") {
+        std::cout << "Ready Now?";
+        std::cin >> answer;
+    }
+    std::cout << std::endl;
+    std::cout << "Finally... After Many Hours and Liters of Sweat and Tears You Hear the Bushes at Coordinate "
+                 << finalDest << " Shaking... Is it a Foe? Is it your Beloved OSNTHR<3 ??\n\n";
+    std::cout << "After an Agonizing Wait, Out Bursts OSNTHR From the Shrubbery \n\n" <<
+        "'YYYIIIIIIIPPPPEEEEEEEEE!!!!' You Shout";
+    std::cout << "\n\n Slowly you Reach toward OSNTHR's Storage Box... Have You Triumphed, or Are You "
+                 "in Financial Ruin After Banking Your Whole Salary on a Treasure Hunting Robot?\n\n";
+    std::cout << "Hands Trembling, You Flip the Open Switch... The Smoke Filling the Box Begins to Clear...\n\n"
+                 "There you see it.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+    std::cout << "\033[1;36;2;43m================================================="
+                 "============================================\033[0m\n\n";
+    std::cout << "           \033[1;39mFinally... ST PETER'S COLLECTION OF FORBIDDEN GOLDEN FUNKO POPS\033[0m";
+    std::cout << "\n\n\033[1;36;2;43m================================================="
+                 "============================================\033[0m\n\n";
+}

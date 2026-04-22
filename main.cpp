@@ -28,6 +28,7 @@ int main() {
     dijkstraAlg dijkstra(g);
     dijkstra.run(0, treasureInput);
     dijkstra.run(treasureInput, finalDest);
+    mapBuilder::finalOutputPrint(finalDest);
 
     return 0;
 }
